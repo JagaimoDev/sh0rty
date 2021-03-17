@@ -6,11 +6,9 @@ const yup = require('yup');
 const { nanoid } = require('nanoid');
 const admin = require('firebase-admin');
 const rateLimit = require('express-rate-limit');
-const enforce = require('express-sslify');
 const { serviceAccount } = require('./config');
 
 const app = express();
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
 app.use(express.json());
 app.use(express.static('./public'));
 app.use(cors());
