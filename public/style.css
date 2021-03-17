@@ -30,6 +30,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
 }
 
 #form{
@@ -120,6 +121,16 @@ input[type=submit]:hover{
 	box-shadow: 0 0 5px #d42020;
 	color: #d42020;
 	text-shadow: 0 0 10px #d42020;
+}
+
+#author{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 4px;
+	color: #d18c1d;
+	text-shadow: 0 0 10px #d18c1d;
+	font-size: 15px;
 }
 
 @media (max-width: 800px) {
