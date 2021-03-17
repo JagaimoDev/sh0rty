@@ -99,6 +99,7 @@ app.get('/url/:alias', async (req, res) => {
 		res.json({
 			alias,
 			url: doc.data().url,
+			date: doc.data().date,
 		});
 	}
 });
