@@ -38,7 +38,7 @@ form.addEventListener('submit', async (e) => {
     }
 
     if (status == 200) {
-		url.value = `https://sh0rty.herokuapp.com/${res.alias}`;
+		url.value = `https://sh0rty.me/${res.alias}`;
 		url.select();
 		url.setSelectionRange(0, 99999);
 		document.execCommand('copy');
