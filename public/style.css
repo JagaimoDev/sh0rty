@@ -6,9 +6,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
 /* font-family: 'Spinnaker', sans-serif; */
 
-:root{
-    --main-color: #f4ae3c;
-    --lightblue: #2e465b;
+:root {
+	--main-color: #f4ae3c;
+	--lightblue: #2e465b;
 	--measure-width: 5px;
 	--transparent: #00000000;
 
@@ -17,46 +17,56 @@
 	--gradient3: #2e7ac2;
 }
 
-
 body {
-    position: relative;
+	position: relative;
 	background-image: linear-gradient(var(--gradient1), var(--gradient2), var(--gradient3));
 	color: var(--main-color);
 	margin: 0px;
-    font-family: 'Spinnaker', sans-serif; 
+	font-family: 'Spinnaker', sans-serif;
 	height: 100vh;
 	overflow: hidden;
 }
 
 @keyframes fade-in {
-    0%   {opacity: 0%;}
-    100% {opacity: 100%;}
+	0% {
+		opacity: 0%;
+	}
+	100% {
+		opacity: 100%;
+	}
 }
 
-#name{
+#name {
 	width: 40%;
-    margin-bottom: 3px;
+	margin-bottom: 3px;
 	vertical-align: text-bottom;
 	margin-top: 5vh;
 	color: var(--main-color);
-    font-weight: bold;
+	font-weight: bold;
 	font-size: 40px;
-    animation: 3s;
-    animation: 1.7s name-animation forwards;
-    
+	animation: 3s;
+	animation: 1.7s name-animation forwards;
 }
 
 @keyframes name-animation {
-    0%   {transform: translateX(-100%); opacity: 0%;}
-    50%  {opacity: 0%; }
-    100% {transform: translateX(74%);  opacity: 100%;}
+	0% {
+		transform: translateX(-100%);
+		opacity: 0%;
+	}
+	50% {
+		opacity: 0%;
+	}
+	100% {
+		transform: translateX(74%);
+		opacity: 100%;
+	}
 }
 
-#main{
-    position: relative;
+#main {
+	position: relative;
 	width: 40%;
-    left: 50%;
-    transform: translateX(-50%);
+	left: 50%;
+	transform: translateX(-50%);
 	height: 70vh;
 	min-height: fit-content;
 	border: var(--main-color) 5px solid;
@@ -64,11 +74,11 @@ body {
 	flex-direction: column;
 	align-items: center;
 	position: relative;
-    animation: 1s fade-in forwards;
-    float: left;
+	animation: 1s fade-in forwards;
+	float: left;
 }
 
-#form{
+#form {
 	display: inherit;
 	flex-direction: inherit;
 	align-items: inherit;
@@ -76,15 +86,16 @@ body {
 	height: 50%;
 }
 
-input, #alert{
+input,
+#alert {
 	-ms-box-sizing: content-box;
 	-moz-box-sizing: content-box;
-	-webkit-box-sizing: content-box; 
+	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
 	padding: 0;
 }
 
-input[type=text]{
+input[type='text'] {
 	width: 30vw;
 	height: 4vh;
 	min-height: 35px;
@@ -96,17 +107,15 @@ input[type=text]{
 	padding: 0 10px;
 }
 
-input[type=text]:focus{
+input[type='text']:focus {
 	outline: 0;
-	
 }
-input[type=text]::placeholder{
+input[type='text']::placeholder {
 	color: var(--main-color);
-    font-weight: bold;
-	
+	font-weight: bold;
 }
 
-input[type=submit]{
+input[type='submit'] {
 	width: 30vw;
 	height: 4vh;
 	min-height: 35px;
@@ -118,10 +127,10 @@ input[type=submit]{
 	cursor: pointer;
 	outline: 0;
 	padding: 0 10px;
-    font-weight: bold;
+	font-weight: bold;
 }
 
-.alertBox{
+.alertBox {
 	display: none;
 	width: 30vw;
 	height: auto;
@@ -134,15 +143,14 @@ input[type=submit]{
 	padding: 0 10px;
 }
 
-.success{
+.success {
 	display: inline-block;
 }
-.error{
+.error {
 	display: inline-block;
 }
 
-
-#author{
+#author {
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -151,106 +159,125 @@ input[type=submit]{
 	font-size: 15px;
 }
 
-.right-measure{
-    position: absolute;
-    right: -70px;
-    top: -5px;
-    width: 50px;
-    height: calc(100% + 10px);
-    float: left;
-    text-align: center;
+.right-measure {
+	position: absolute;
+	right: -70px;
+	top: -5px;
+	width: 50px;
+	height: calc(100% + 10px);
+	float: left;
+	text-align: center;
 	animation: 1s measure-ani forwards;
 }
 
 @keyframes measure-ani {
-	0%   {transform: translateX(-100%); opacity: 0%;}
-	50%  {opacity: 0%; }
-	100% {transform: translateX(0%);  opacity: 100%;}
+	0% {
+		transform: translateX(-100%);
+		opacity: 0%;
+	}
+	50% {
+		opacity: 0%;
+	}
+	100% {
+		transform: translateX(0%);
+		opacity: 100%;
+	}
 }
 
 @keyframes measure-ani2 {
-	0%   {transform: translateX(-100%);}
-	50%  {}
-	100% {transform: translateX(0%);}
+	0% {
+		transform: translateX(-100%);
+	}
+	50% {
+	}
+	100% {
+		transform: translateX(0%);
+	}
 }
 
-.right-measure .mid{
-    display: inline-block;
-    height: 100%;
-    width: var(--measure-width);
-    background-color: var(--main-color);
+.right-measure .mid {
+	display: inline-block;
+	height: 100%;
+	width: var(--measure-width);
+	background-color: var(--main-color);
 	clear: both;
 }
 
-.right-measure .mid p{
+.right-measure .mid p {
 	position: absolute;
 	top: 50%;
 	width: 100px;
 	right: -80px;
 	transform: translateY(-100%);
-    display: inline-block;
-    color: var(--main-color);
+	display: inline-block;
+	color: var(--main-color);
 	clear: both;
 	font-size: 20px;
 }
 
-.right-measure .top{
+.right-measure .top {
 	position: absolute;
 	top: 0px;
 	left: 5px;
-    display: inline-block;
-    height: var(--measure-width);
-    width: 20px;
-    background-color: var(--main-color);
+	display: inline-block;
+	height: var(--measure-width);
+	width: 20px;
+	background-color: var(--main-color);
 	clear: both;
 }
-.right-measure .bot{
+.right-measure .bot {
 	position: absolute;
 	left: 5px;
 	bottom: 0px;
-    display: inline-block;
-    height: var(--measure-width);
-    width: 20px;
-    background-color: var(--main-color);
+	display: inline-block;
+	height: var(--measure-width);
+	width: 20px;
+	background-color: var(--main-color);
 	clear: both;
 }
 
 @media (max-width: 800px) {
-
-	#main{
-	 	width: 80vw;
+	#main {
+		width: 80vw;
 		min-height: 350px;
 	}
-	#name{
+	#name {
 		font-size: 30px;
 	}
-	input[type=text]{
+	input[type='text'] {
 		font-size: 13px;
 		width: 60vw;
 	}
-	input[type=submit]{
+	input[type='submit'] {
 		font-size: 18px;
 		width: 60vw;
 	}
-	.alertBox{
+	.alertBox {
 		font-size: 16px;
 		width: 60vw;
 	}
 
 	@keyframes name-animation {
-		0%   {transform: translateX(-100%); opacity: 0%;}
-		50%  {opacity: 0%; }
-		100% {transform: translateX(24%);  opacity: 100%;}
+		0% {
+			transform: translateX(-100%);
+			opacity: 0%;
+		}
+		50% {
+			opacity: 0%;
+		}
+		100% {
+			transform: translateX(24%);
+			opacity: 100%;
+		}
 	}
 
-	.right-measure{
+	.right-measure {
 		display: none;
 	}
- 
 }
 
 @media (max-height: 400px) {
-	body{
+	body {
 		overflow: auto;
 	}
 }
