@@ -5,7 +5,7 @@ const helmet = require('helmet');
 const yup = require('yup');
 const { nanoid } = require('nanoid');
 const rateLimit = require('express-rate-limit');
-const { serviceAccount } = require('./config');
+const { db } = require('./config');
 
 const app = express();
 app.use(express.json());
