@@ -248,3 +248,9 @@ input[type=submit]{
 	}
  
 }
+
+@media (max-height: 400px) {
+	body{
+		overflow: auto;
+	}
+}
