@@ -4,7 +4,6 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const yup = require('yup');
 const { nanoid } = require('nanoid');
-const admin = require('firebase-admin');
 const rateLimit = require('express-rate-limit');
 const { serviceAccount } = require('./config');
 
@@ -15,11 +14,6 @@ app.use(cors());
 app.use(morgan('tiny'));
 app.use(helmet());
 app.set('trust proxy', 1);
-
-admin.initializeApp({
-	credential: admin.credential.cert(serviceAccount),
-});
-const db = admin.firestore();
 
 const limiter = rateLimit({
 	windowMs: 30 * 1000,
