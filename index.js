@@ -64,8 +64,8 @@ app.post('/url', async (req, res, next) => {
 				.doc(alias)
 				.set({
 					alias: alias,
+					creationDate: date,
 					url: url,
-					date: date,
 				})
 				.catch((e) => {
 					next(e);
@@ -98,8 +98,8 @@ app.get('/url/:alias', async (req, res) => {
 	} else {
 		res.json({
 			alias,
+			creationDate: doc.data().creationDate,
 			url: doc.data().url,
-			date: doc.data().date,
 		});
 	}
 });
