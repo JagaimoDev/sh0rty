@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>sh0rty</title>
-	<link rel="stylesheet" href="style.css?ver=2.3.2">
+	<link rel="stylesheet" href="style.css?ver=3.0.0">
 	<meta name="description" content="Sh0rty is the coolest link shortener on the Internet.">
 	<meta name="google" content="notranslate">
 	<meta property="og:url" content="https://sh0rty.me">
@@ -14,9 +14,17 @@
 	<meta property="og:type" content="website">
 	<meta name="theme-color" content="#d18c1d">
 </head>
-<body>
+<body onresize="setHeightText()" onload="setHeightText()">
+
 	<p id="name">SH0RTY</p>
 	<div id="main">
+		<div class="right-measure" id="right-measure">
+			<span class="top"></span>
+			<span class="mid">
+				<p id="sizeText"></p>
+			</span>
+			<span class="bot"></span>
+		</div>
 		<form id="form" action="" method="post">
 			<input type="text" name="url" id="url" placeholder="URL">
 			<input type="submit" id="submit" value="Shorten URL">
