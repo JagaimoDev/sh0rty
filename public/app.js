@@ -14,7 +14,7 @@ form.addEventListener('submit', async (e) => {
 	e.preventDefault();
 	let status, res;
 	let link = url.value;
-	if (link.includes('sh0rty')) {
+	if (link.includes('sh0rty.me') || link.includes('sh0rty.herokuapp.com')) {
 		alertBox.classList.remove('success');
 		alertBox.classList.add('error');
 		alertText.innerHTML = "You can't create sh0rty from sh0rty.";
