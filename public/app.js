@@ -3,13 +3,13 @@ const url = document.querySelector('#url');
 const alertBox = document.querySelector('.alertBox');
 const alertText = document.querySelector('.alertBox p');
 const sizeText = document.querySelector('#sizeText');
-const mesureDiv = document.querySelector('#right-measure');
+const measureDiv = document.querySelector('#right-measure');
 const trigger = document.querySelector('.trigger');
 const themesList = document.querySelector('.themesList');
 const theme = document.querySelector('#theme');
 
 function setHeightText() {
-	const height = mesureDiv.offsetHeight;
+	const height = measureDiv.offsetHeight;
 	sizeText.innerHTML = (height * 0.0264583).toFixed(2) + ' cm';
 }
 
@@ -61,7 +61,7 @@ document.querySelectorAll('input[name=themes]').forEach((c) => {
 	});
 });
 
-mesureDiv.addEventListener('animationend', () => {
+measureDiv.addEventListener('animationend', () => {
 	setHeightText();
 });
 
