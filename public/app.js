@@ -61,6 +61,10 @@ document.querySelectorAll('input[name=themes]').forEach((c) => {
 	});
 });
 
+mesureDiv.addEventListener('animationend', () => {
+	setHeightText();
+});
+
 trigger.addEventListener('click', (e) => {
 	e.preventDefault();
 	if (trigger.classList.contains('triggerActive')) {
