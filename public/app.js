@@ -9,28 +9,61 @@ const themesList = document.querySelector('.themesList');
 const theme = document.querySelector('#theme');
 
 function setHeightText() {
-	var height = mesureDiv.offsetHeight;
+	const height = mesureDiv.offsetHeight;
 	sizeText.innerHTML = (height * 0.0264583).toFixed(2) + ' cm';
 }
 
+function setCookie(cname, cvalue) {
+	document.cookie = cname + '=' + cvalue + ';path=/';
+}
+
+function getCookie(cname) {
+	const name = cname + '=';
+	const decodedCookie = decodeURIComponent(document.cookie);
+	const cookies = decodedCookie.split(';');
+	for (let i = 0; i < cookies.length; i++) {
+		const cookie = cookies[i];
+		while (cookie.charAt(0) == ' ') {
+			cookie = cookie.substring(1);
+		}
+		if (cookie.indexOf(name) == 0) {
+			return cookie.substring(name.length, cookie.length);
+		}
+	}
+	return '';
+}
+
+function checkCookie() {
+	const themeCookie = getCookie('theme');
+	if (!themeCookie) {
+		document.querySelector('input[value=modern]').checked = true;
+		setCookie('theme', 'modern');
+	} else {
+		document.querySelector(`input[value=${themeCookie}]`).checked = true;
+	}
+}
+
+window.onload = () => {
+	checkCookie();
+	setHeightText();
+}
+
+window.onresize = () => {
+	setHeightText();
+};
+
 document.querySelectorAll('input[name=themes]').forEach((c) => {
-	c.addEventListener('change', async (e) => {
+	c.addEventListener('change', (e) => {
 		e.preventDefault();
 		const selected = e.target.value;
-		switch(selected) {
-			case 'modern':
-				theme.href = 'modern.css?ver=1.0.0';
-				break;
-			case 'classic':
-				theme.href = 'classic.css?ver=1.0.0';
-				break;
-		}
+		setCookie('theme', selected);
+		theme.href = `${selected}.css?${theme.href.split('?')[1]}`;
 	});
 });
 
-trigger.addEventListener('click', async (e) => {
+trigger.addEventListener('click', (e) => {
 	e.preventDefault();
-	if(trigger.classList.contains('triggerActive')) {
+	if (trigger.classList.contains('triggerActive')) {
 		themesList.classList.remove('themesListActive');
 		trigger.classList.remove('triggerActive');
 	} else {

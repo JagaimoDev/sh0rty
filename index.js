@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -5,14 +6,18 @@ const helmet = require('helmet');
 const yup = require('yup');
 const { nanoid } = require('nanoid');
 const rateLimit = require('express-rate-limit');
+const cookieParser = require('cookie-parser');
 const { db } = require('./config');
 
 const app = express();
 app.use(express.json());
+app.engine('html', require('ejs').renderFile);
+app.set('views', './public'); 
 app.use(express.static('./public'));
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(helmet());
+app.use(cookieParser());
 app.set('trust proxy', 1);
 
 const limiter = rateLimit({
@@ -22,6 +27,11 @@ const limiter = rateLimit({
 		message: 'Too many requests. Try again in 30 seconds.',
 	}),
 });
+
+app.get('/', (req, res) => {
+	res.render('index.ejs', { theme: `${req.cookies.theme ? req.cookies.theme : 'modern'}.css` });
+});
+
 app.use('/url', limiter);
 
 const schema = yup.object().shape({
