@@ -1,0 +1,36 @@
+.trigger {
+	position: fixed;
+	top: 0;
+	right: 10px;
+	margin: 0;
+	border: solid white;
+	border-width: 0 4px 4px 0;
+	display: inline-block;
+	padding: 8px;
+	cursor: pointer;
+	transition: 0.2s;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+.triggerActive {
+	top: 10px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+}
+
+.themesList {
+	position: fixed;
+	background-color: #424242;
+	border-radius: 10%;
+	height: 50px;
+	width: 100px;
+	top: 30px;
+	right: 5px;
+	padding: 10px;
+	display: none;
+}
+
+.themesListActive {
+	display: inline-block;
+}

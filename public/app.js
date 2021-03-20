@@ -4,11 +4,40 @@ const alertBox = document.querySelector('.alertBox');
 const alertText = document.querySelector('.alertBox p');
 const sizeText = document.querySelector('#sizeText');
 const mesureDiv = document.querySelector('#right-measure');
+const trigger = document.querySelector('.trigger');
+const themesList = document.querySelector('.themesList');
+const theme = document.querySelector('#theme');
 
 function setHeightText() {
 	var height = mesureDiv.offsetHeight;
 	sizeText.innerHTML = (height * 0.0264583).toFixed(2) + ' cm';
 }
+
+document.querySelectorAll('input[name=themes]').forEach((c) => {
+	c.addEventListener('change', async (e) => {
+		e.preventDefault();
+		const selected = e.target.value;
+		switch(selected) {
+			case 'modern':
+				theme.href = 'modern.css?ver=1.0.0';
+				break;
+			case 'classic':
+				theme.href = 'classic.css?ver=1.0.0';
+				break;
+		}
+	});
+});
+
+trigger.addEventListener('click', async (e) => {
+	e.preventDefault();
+	if(trigger.classList.contains('triggerActive')) {
+		themesList.classList.remove('themesListActive');
+		trigger.classList.remove('triggerActive');
+	} else {
+		themesList.classList.add('themesListActive');
+		trigger.classList.add('triggerActive');
+	}
+});
 
 form.addEventListener('submit', async (e) => {
 	e.preventDefault();

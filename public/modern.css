@@ -159,7 +159,7 @@ input[type='submit'] {
 	font-size: 15px;
 }
 
-.right-measure {
+#right-measure {
 	position: absolute;
 	right: -70px;
 	top: -5px;
@@ -193,7 +193,7 @@ input[type='submit'] {
 	}
 }
 
-.right-measure .mid {
+#right-measure .mid {
 	display: inline-block;
 	height: 100%;
 	width: var(--measure-width);
@@ -201,7 +201,7 @@ input[type='submit'] {
 	clear: both;
 }
 
-.right-measure .mid p {
+#right-measure .mid p {
 	position: absolute;
 	top: 50%;
 	width: 100px;
@@ -213,7 +213,7 @@ input[type='submit'] {
 	font-size: 20px;
 }
 
-.right-measure .top {
+#right-measure .top {
 	position: absolute;
 	top: 0px;
 	left: 5px;
@@ -223,7 +223,7 @@ input[type='submit'] {
 	background-color: var(--main-color);
 	clear: both;
 }
-.right-measure .bot {
+#right-measure .bot {
 	position: absolute;
 	left: 5px;
 	bottom: 0px;
@@ -269,7 +269,7 @@ input[type='submit'] {
 		}
 	}
 
-	.right-measure {
+	#right-measure {
 		display: none;
 	}
 }
