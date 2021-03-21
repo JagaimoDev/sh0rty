@@ -8,7 +8,7 @@ const yup = require('yup');
 const { nanoid } = require('nanoid');
 const rateLimit = require('express-rate-limit');
 const cookieParser = require('cookie-parser');
-const { db } = require('./config');
+//const { db } = require('./config');
 
 const app = express();
 app.use(express.json());
