@@ -17,7 +17,7 @@ app.set('views', './public');
 app.use(express.static('./public'));
 app.use(cors());
 app.use(morgan('tiny'));
-app.use(helmet());
+if (process.env.DEBUG!=1) app.use(helmet());
 app.use(cookieParser());
 app.set('trust proxy', 1);
 
