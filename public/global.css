@@ -76,12 +76,13 @@ body{
 	top: 44px;
 	left: -125px;
 	padding: 10px;
+	padding-left: 15px;
 	transition: 0.2s;
 }
 
 .themesListActive {
 	display: inline-block;
-	left: 0px;
+	left: -5px;
 	transition: 0.2s;
 }
 
@@ -137,6 +138,10 @@ body{
 
 @media (max-width: 800px)
 {
+	.trigger{
+		left: auto;
+		right: 10px;
+	}
 	.trigger p{
 		left: auto;
 		right: 10px;
@@ -145,11 +150,12 @@ body{
 	.themesList {
 		right: -125px;
 		left: auto;
+		padding-right: 15px;
 	}
 
 	.themesListActive {
 		display: inline-block;
-		right: 0px;
+		right: -5px;
 		transition: 0.2s;
 	}
 
