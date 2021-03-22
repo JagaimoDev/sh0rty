@@ -1,10 +1,12 @@
 /* css made by: Kajetan Zamojski */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 /* font-family: 'Lato', sans-serif; */
 
 body {
-	background-color: #222222;
+	height: calc(100vh - 47px);
+	background: linear-gradient( rgba(14,14,14,1) 0%, rgb(44, 44, 44) 100%);
 	color: white;
 	margin: 0px;
 	font-family: 'Lato', sans-serif;
@@ -18,7 +20,8 @@ body {
 	vertical-align: text-;
 	margin-top: 5vh;
 	color: #d18c1d;
-	font-size: 50px;
+	font-size: 60px;
+	font-family: 'Monoton', cursive;
 	text-shadow: 0 0 10px #d18c1d;
 	animation: 1s neon-name forwards;
 }
@@ -36,7 +39,7 @@ body {
 
 
 #main {
-	background-color: #222222;
+	background-color: #00000000;
 	width: 40%;
 	margin: auto;
 	height: 70vh;
@@ -82,7 +85,7 @@ input[type='text'] {
 	height: 4vh;
 	min-height: 35px;
 	margin-top: 6vh;
-	background-color: #222222;
+	background-color: #00000000;
 	border: #d18c1d 4px solid;
 	border-radius: 5px;
 	box-shadow: 0 0 5px #d18c1d;
@@ -102,7 +105,7 @@ input[type='submit'] {
 	height: 4vh;
 	min-height: 35px;
 	margin-top: 5vh;
-	background-color: #222222;
+	background-color: #00000000;
 	border: #d18c1d 4px solid;
 	border-radius: 5px;
 	box-shadow: 0 0 5px #d18c1d;
@@ -122,7 +125,7 @@ input[type='submit']:hover {
 	width: 30vw;
 	height: auto;
 	margin-top: 10%;
-	background-color: #222222;
+	background-color: #00000000;
 	font-size: 18px;
 	text-align: center;
 	border-radius: 5px;
@@ -164,6 +167,16 @@ input[type='submit']:hover {
 	display: none;
 }
 
+.info{
+	width: calc(30vw + 20px);
+	height: 4vh;
+	margin-top: 5vh;
+	color: #d18c1d;
+	text-shadow: 0 0 10px #d18c1d;
+	text-align: center;
+	font-size: 17px;
+}
+
 
 @media (max-width: 800px) {
 	#main {
@@ -184,5 +197,9 @@ input[type='submit']:hover {
 	.alertBox {
 		font-size: 16px;
 		width: 60vw;
+	}
+	.info{
+		width: calc(60vw + 20px);
+		height: 4vh;
 	}
 }

@@ -49,6 +49,14 @@ body {
 	animation: 1.7s name-animation forwards;
 }
 
+.info{
+	width: calc(30vw + 20px);
+	height: 4vh;
+	margin-top: 5vh;
+	text-align: center;
+	font-size: 17px;
+}
+
 @keyframes name-animation {
 	0% {
 		transform: translateX(-100%);
@@ -256,6 +264,11 @@ input[type='submit'] {
 		width: 60vw;
 	}
 
+	.info{
+		width: calc(60vw + 20px);
+		height: 4vh;
+	}
+
 	@keyframes name-animation {
 		0% {
 			transform: translateX(-100%);
@@ -279,4 +292,5 @@ input[type='submit'] {
 	body {
 		overflow: auto;
 	}
+	
 }
