@@ -49,6 +49,7 @@ body {
 	animation: 1.7s name-animation forwards;
 }
 
+
 @keyframes name-animation {
 	0% {
 		transform: translateX(-100%);
@@ -235,6 +236,15 @@ input[type='submit'] {
 	clear: both;
 }
 
+.info{
+	width: calc(30vw + 20px);
+	height: 4vh;
+	margin-top: 5vh;
+	text-align: center;
+	font-size: 17px;
+	font-weight: bold;
+}
+
 @media (max-width: 800px) {
 	#main {
 		width: 80vw;
@@ -254,6 +264,11 @@ input[type='submit'] {
 	.alertBox {
 		font-size: 16px;
 		width: 60vw;
+	}
+
+	.info{
+		width: calc(60vw + 20px);
+		height: 4vh;
 	}
 
 	@keyframes name-animation {
@@ -279,4 +294,5 @@ input[type='submit'] {
 	body {
 		overflow: auto;
 	}
+	
 }

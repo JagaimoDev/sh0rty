@@ -8,10 +8,11 @@ const trigger = document.querySelector('.trigger');
 const themesList = document.querySelector('.themesList');
 const theme = document.querySelector('#theme');
 
-function setHeightText() {
-	const height = measureDiv.offsetHeight;
-	sizeText.innerHTML = (height * 0.0264583).toFixed(2) + ' cm';
+async function getData(url) {
+	const res = await fetch(url);
+	return res.json();
 }
+const themesJSON = await getData('./themes.json');
 
 function setCookie(cname, cvalue) {
 	document.cookie = cname + '=' + cvalue + ';path=/';
@@ -36,8 +37,7 @@ function getCookie(cname) {
 function checkCookie() {
 	const themeCookie = getCookie('theme');
 	if (!themeCookie) {
-		document.querySelector('input[value=modern]').checked = true;
-		setCookie('theme', 'modern');
+		document.querySelector('input[value=blueprint]').checked = true;
 	} else {
 		document.querySelector(`input[value=${themeCookie}]`).checked = true;
 	}
@@ -46,7 +46,7 @@ function checkCookie() {
 window.onload = () => {
 	checkCookie();
 	setHeightText();
-}
+};
 
 window.onresize = () => {
 	setHeightText();
@@ -57,9 +57,14 @@ document.querySelectorAll('input[name=themes]').forEach((c) => {
 		e.preventDefault();
 		const selected = e.target.value;
 		setCookie('theme', selected);
-		theme.href = `${selected}.css?${theme.href.split('?')[1]}`;
+		theme.href = [selected].map((c) => themesJSON[c]).join``;
 	});
 });
+
+function setHeightText() {
+	const height = measureDiv.offsetHeight;
+	sizeText.innerHTML = (height * 0.0264583).toFixed(2) + ' cm';
+}
 
 measureDiv.addEventListener('animationend', () => {
 	setHeightText();

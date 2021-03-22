@@ -9,15 +9,16 @@ const { nanoid } = require('nanoid');
 const rateLimit = require('express-rate-limit');
 const cookieParser = require('cookie-parser');
 const { db } = require('./config');
+const themesJSON = require('./public/themes.json');
 
 const app = express();
 app.use(express.json());
 app.engine('html', require('ejs').renderFile);
-app.set('views', './public'); 
+app.set('views', './public');
 app.use(express.static('./public'));
 app.use(cors());
 app.use(morgan('tiny'));
-app.use(helmet());
+if (process.env.DEBUG != 1) app.use(helmet());
 app.use(cookieParser());
 app.set('trust proxy', 1);
 
@@ -30,7 +31,10 @@ const limiter = rateLimit({
 });
 
 app.get('/', (req, res) => {
-	res.render('index.ejs', { theme: `${req.cookies.theme ? req.cookies.theme : 'modern'}.css` });
+	const cval = req.cookies.theme;
+	const mapTheme = [cval].map((c) => themesJSON[c]).join``;
+	const theme = mapTheme ? mapTheme : themesJSON.blueprint;
+	res.render('index.ejs', { theme: theme });
 });
 
 app.use('/url', limiter);
