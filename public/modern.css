@@ -25,7 +25,7 @@ body {
 	font-family: 'Spinnaker', sans-serif;
 	height: 100vh;
 	overflow: hidden;
-	visibility: visible;
+	visibility: visible !important;
 }
 
 @keyframes fade-in {
