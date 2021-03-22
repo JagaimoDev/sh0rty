@@ -174,7 +174,7 @@ input[type='submit']:hover {
 	color: #d18c1d;
 	text-shadow: 0 0 10px #d18c1d;
 	text-align: center;
-	font-size: 17px;
+	font-size: 20px;
 }
 
 
@@ -200,6 +200,7 @@ input[type='submit']:hover {
 	}
 	.info{
 		width: calc(60vw + 20px);
+		font-size: 17px;
 		height: 4vh;
 	}
 }

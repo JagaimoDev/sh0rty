@@ -49,13 +49,6 @@ body {
 	animation: 1.7s name-animation forwards;
 }
 
-.info{
-	width: calc(30vw + 20px);
-	height: 4vh;
-	margin-top: 5vh;
-	text-align: center;
-	font-size: 17px;
-}
 
 @keyframes name-animation {
 	0% {
@@ -241,6 +234,15 @@ input[type='submit'] {
 	width: 20px;
 	background-color: var(--main-color);
 	clear: both;
+}
+
+.info{
+	width: calc(30vw + 20px);
+	height: 4vh;
+	margin-top: 5vh;
+	text-align: center;
+	font-size: 17px;
+	font-weight: bold;
 }
 
 @media (max-width: 800px) {
