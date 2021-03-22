@@ -76,13 +76,12 @@ body{
 	top: 44px;
 	left: -125px;
 	padding: 10px;
-	padding-left: 15px;
 	transition: 0.2s;
 }
 
 .themesListActive {
 	display: inline-block;
-	left: -5px;
+	left: 0px;
 	transition: 0.2s;
 }
 
@@ -136,5 +135,23 @@ body{
 	box-sizing: border-box;
 }
 
+@media (max-width: 800px)
+{
+	.trigger p{
+		left: auto;
+		right: 10px;
+	}
 
+	.themesList {
+		right: -125px;
+		left: auto;
+	}
+
+	.themesListActive {
+		display: inline-block;
+		right: 0px;
+		transition: 0.2s;
+	}
+
+}
 
