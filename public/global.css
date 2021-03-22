@@ -64,10 +64,10 @@
 
 .themesList {
 	position: fixed;
-	background-color: #424242;
+	background-color: #dbdbdb;
 	border-radius: 5px;
-	height: 50px;
-	width: 100px;
+	height: 70px;
+	width: 30px;
 	top: 44px;
 	left: -125px;
 	padding: 10px;
@@ -80,3 +80,56 @@
 	left: -5px;
 	transition: 0.2s;
 }
+
+
+.theme-input{
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-color: greenyellow;
+	margin-bottom: 10px;
+}
+
+.inside-input{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	height: 16px;
+	width: 16px;
+	display: block;
+	box-sizing: border-box;
+}
+
+.modern{
+	background-image: linear-gradient(#03378b, #2b4ce0, #2e7ac2);
+	cursor: pointer;
+}
+
+.modern .inside-input{
+	border: 2px #f4ae3c solid;
+}
+
+#modern-input:checked~.modern{
+	border: 2px #c7c7c7 solid;
+	box-sizing: border-box;
+}
+
+.classic{
+	background-color: #222222;
+	cursor: pointer;
+}
+
+.classic .inside-input{
+	border: 2px #d18c1d solid;
+	box-shadow: 0 0 4px #d18c1d;
+}
+
+#classic-input:checked~.classic{
+	border: 2px #c7c7c7 solid;
+	box-sizing: border-box;
+}
+
+
+
