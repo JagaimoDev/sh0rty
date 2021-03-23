@@ -110,31 +110,83 @@ body{
 .blueprint{
 	background-image: linear-gradient(#03378b, #2b4ce0, #2e7ac2);
 	cursor: pointer;
-}
-
-.blueprint .inside-input{
 	border: 2px #f4ae3c solid;
-}
-
-#blueprint-input:checked~.blueprint{
-	border: 2px #c7c7c7 solid;
 	box-sizing: border-box;
 }
+
+/* .blueprint .inside-input{
+	border: 2px #f4ae3c solid;
+} */
+
+
 
 .neon{
-	background-color: #222222;
+	background: linear-gradient( rgba(14,14,14,1) 0%, rgb(44, 44, 44) 100%);
 	cursor: pointer;
-}
-
-.neon .inside-input{
 	border: 2px #d18c1d solid;
 	box-shadow: 0 0 4px #d18c1d;
-}
-
-#neon-input:checked~.neon{
-	border: 2px #c7c7c7 solid;
 	box-sizing: border-box;
 }
+
+/* .neon .inside-input{
+	border: 2px #d18c1d solid;
+	box-shadow: 0 0 4px #d18c1d;
+} */
+
+
+
+#pointer{
+	position: absolute;
+	right: -30px;
+	left: auto;
+	top: 10px;
+	height: 30px;
+	width: 30px;
+	text-align: center;
+	transform: translateY(0px);
+	transition: 0.2s ease-out;
+}
+
+/* .pointer-blueprint{
+	transform: translateY(0px);
+	transition: 0.5s ease-out;
+}
+.pointer-neon{
+	transform: translateY(40px);
+	transition: 0.5s ease-out;
+} */
+
+#pointer-inner::before
+{
+	content: '';
+	background: var(--burger-color);
+	display: inline-block;
+	width: 15px;
+	height: 4px;
+	border-radius: 3px;
+	transform: translateX(-6px) translateY(-5px) rotate(90deg) ;
+}
+
+#pointer-inner
+{
+	display: inline-block;
+	width: 15px;
+	height: 4px;
+	border-radius: 3px;
+	background-color: var(--burger-color);
+	transform: translateY(8px) rotate(-45deg);
+}
+
+#blueprint-input:checked~#pointer{
+	transform: translateY(0px);
+	transition: 0.2s ease-out;
+}
+#neon-input:checked~#pointer{
+	transform: translateY(40px);
+	transition: 0.2s ease-out;
+}
+
+
 
 @media (max-width: 800px)
 {
@@ -158,6 +210,20 @@ body{
 		right: -5px;
 		transition: 0.2s;
 	}
+
+	#pointer{
+		right: auto;
+		left: -30px;
+		transform: translateY(0px) rotate(180deg);
+	}
+
+	#blueprint-input:checked~#pointer{
+		transform: translateY(0px) rotate(180deg);
+	}
+	#neon-input:checked~#pointer{
+		transform: translateY(40px) rotate(180deg);
+	}
+	
 
 }
 

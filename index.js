@@ -32,8 +32,7 @@ const limiter = rateLimit({
 
 app.get('/', (req, res) => {
 	const cval = req.cookies.theme;
-	const mapTheme = [cval].map((c) => themesJSON[c]).join``;
-	const theme = mapTheme ? mapTheme : themesJSON.blueprint;
+	const theme = themesJSON[cval] ? themesJSON[cval] : themesJSON.blueprint;
 	res.render('index.ejs', { theme: theme });
 });
 
