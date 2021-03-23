@@ -138,6 +138,7 @@ body{
 #pointer{
 	position: absolute;
 	right: -30px;
+	left: auto;
 	top: 10px;
 	height: 30px;
 	width: 30px;
@@ -209,6 +210,20 @@ body{
 		right: -5px;
 		transition: 0.2s;
 	}
+
+	#pointer{
+		right: auto;
+		left: -30px;
+		transform: translateY(0px) rotate(180deg);
+	}
+
+	#blueprint-input:checked~#pointer{
+		transform: translateY(0px) rotate(180deg);
+	}
+	#neon-input:checked~#pointer{
+		transform: translateY(40px) rotate(180deg);
+	}
+	
 
 }
 
