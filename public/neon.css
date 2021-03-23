@@ -5,12 +5,13 @@
 /* font-family: 'Lato', sans-serif; */
 
 body {
-	height: calc(100vh - 47px);
+	height: 100vh;
 	background: linear-gradient( rgba(14,14,14,1) 0%, rgb(44, 44, 44) 100%);
 	color: white;
 	margin: 0px;
 	font-family: 'Lato', sans-serif;
 	visibility: visible !important;
+	overflow: hidden;
 }
 
 #name {
@@ -204,3 +205,11 @@ input[type='submit']:hover {
 		height: 4vh;
 	}
 }
+
+@media (max-height: 400px) {
+	body {
+		overflow: auto;
+	}
+	
+}
+

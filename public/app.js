@@ -7,6 +7,7 @@ const measureDiv = document.querySelector('#right-measure');
 const trigger = document.querySelector('.trigger');
 const themesList = document.querySelector('.themesList');
 const theme = document.querySelector('#theme');
+const pointer = document.querySelector('.pointer');
 
 async function getData(url) {
 	const res = await fetch(url);
