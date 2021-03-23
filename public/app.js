@@ -49,14 +49,6 @@ function setHeightText() {
 }
 setHeightText();
 
-measureDiv.addEventListener('animationend', () => {
-	setHeightText();
-});
-
-window.onresize = () => {
-	setHeightText();
-};
-
 document.querySelectorAll('input[name=themes]').forEach((c) => {
 	c.addEventListener('change', async (e) => {
 		const themesJSON = await getData('./themes.json');
@@ -64,6 +56,14 @@ document.querySelectorAll('input[name=themes]').forEach((c) => {
 		setCookie('theme', selected);
 		theme.href = [selected].map((c) => themesJSON[c]).join``;
 	});
+});
+
+window.onresize = () => {
+	setHeightText();
+};
+
+measureDiv.addEventListener('animationend', () => {
+	setHeightText();
 });
 
 trigger.addEventListener('click', (e) => {
