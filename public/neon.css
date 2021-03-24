@@ -209,7 +209,6 @@ input[type='submit']:hover {
 @media (max-height: 400px) {
 	body {
 		overflow: auto;
+		height: 140vh;
 	}
-	
 }
-
