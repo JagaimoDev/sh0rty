@@ -45,15 +45,12 @@
 		<p></p>
 	</div>
 	<div class="themesList">
-		
-		<input id="blueprint-input" type="radio" name="themes" value="blueprint" hidden>
-		<label class="theme-input blueprint" for="blueprint-input">
-			<span class="inside-input"></span>
-		</label>
-		<input id="neon-input" type="radio" name="themes" value="neon" hidden>
-		<label class="theme-input neon" for="neon-input">
-			<span class="inside-input"></span>
-		</label>
+		<% Object.keys(themesJSON).forEach((e) => { %>
+			<input id="<%= e %>-input" type="radio" name="themes" value="<%= e %>" hidden>
+			<label class="theme-input <%= e %>" for="<%= e %>-input">
+				<span class="inside-input"></span>
+			</label>
+		<% }); %>
 		<div id="pointer">
 			<span id="pointer-inner"></span>
 		</div>

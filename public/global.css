@@ -141,15 +141,6 @@ body {
 	transition: 0.2s ease-out;
 }
 
-/* .pointer-blueprint{
-	transform: translateY(0px);
-	transition: 0.5s ease-out;
-}
-.pointer-neon{
-	transform: translateY(40px);
-	transition: 0.5s ease-out;
-} */
-
 #pointer-inner::before {
 	content: '';
 	background: var(--burger-color);
