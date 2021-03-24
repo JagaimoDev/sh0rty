@@ -130,6 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function transformPointer() {
-		pointer.style.transform = `translateY(${translatePointer}) rotate(${window.innerWidth < 800 ? -180 : 0}deg)`;
+		pointer.style.transform = `translateY(${translatePointer}) rotate(${window.innerWidth <= 800 ? -180 : 0}deg)`;
 	}
 });
