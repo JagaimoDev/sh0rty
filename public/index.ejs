@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>SH0RTY</title>
-	<link rel="stylesheet" href="global.css?ver=2.3.4">
+	<link rel="stylesheet" href="global.css?ver=2.3.6">
 	<link rel="stylesheet" href="<%= theme %>"" id="theme">
 	<meta name="description" content="SH0RTY is the coolest link shortener on the Internet.">
 	<meta name="google" content="notranslate">
@@ -14,7 +14,7 @@
 	<meta property="og:description" content="SH0RTY is the coolest link shortener on the Internet.">
 	<meta property="og:type" content="website">
 	<meta name="theme-color" content="#d18c1d">
-	<script src="app.js?ver=3.1.6"></script>
+	<script src="app.js?ver=3.2.2"></script>
 </head>
 <body>
 
@@ -45,15 +45,18 @@
 		<p></p>
 	</div>
 	<div class="themesList">
-		
-		<input id="blueprint-input" type="radio" name="themes" value="blueprint" hidden>
-		<label class="theme-input blueprint" for="blueprint-input">
-			<span class="inside-input"></span>
-		</label>
-		<input id="neon-input" type="radio" name="themes" value="neon" hidden>
-		<label class="theme-input neon" for="neon-input">
-			<span class="inside-input"></span>
-		</label>
+		<% let themesListHeight = 0;
+		   let movePointerOver = 40;
+		   let movePointerTo = -movePointerOver;
+		   Object.keys(themesJSON).forEach((e, i) => { 
+			themesListHeight += i < 1 ? 30 : 40;
+		   	movePointerTo += movePointerOver %>
+			<input id="<%= e %>-input" type="radio" name="themes" value="<%= e %>" data-move-pointer-to="<%= movePointerTo %>px" hidden>
+			<label class="theme-input <%= e %>" for="<%= e %>-input">
+				<span class="inside-input"></span>
+			</label>
+		<% }); %>
+		<data data-themes-list-height="<%= themesListHeight %>px"></data>
 		<div id="pointer">
 			<span id="pointer-inner"></span>
 		</div>

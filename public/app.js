@@ -8,12 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	const trigger = document.querySelector('.trigger');
 	const themesList = document.querySelector('.themesList');
 	const theme = document.querySelector('#theme');
+	const pointer = document.querySelector('#pointer');
+	let translatePointer;
 
 	checkCookie();
+	setThemesListHeight();
 	setHeightText();
 
 	window.onresize = () => {
 		setHeightText();
+		transformPointer();
 	};
 
 	document.querySelectorAll('input[name=themes]').forEach((c) => {
@@ -22,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			const selected = e.target.value;
 			setCookie('theme', selected);
 			theme.href = themesJSON[selected];
+			translatePointer = e.target.dataset.movePointerTo;
+			transformPointer();
 		});
 	});
 
@@ -104,17 +110,26 @@ document.addEventListener('DOMContentLoaded', () => {
 		return '';
 	}
 
-	function checkCookie() {
+	async function checkCookie() {
 		const themeCookie = getCookie('theme');
-		if (!themeCookie) {
-			document.querySelector('input[value=blueprint]').checked = true;
-		} else {
-			document.querySelector(`input[value=${themeCookie}]`).checked = true;
-		}
+		const themesJSON = await getData('./themes.json');
+		const selectedThemeInput = document.querySelector(`input[value=${themeCookie ? themeCookie : Object.keys(themesJSON)[0]}]`);
+		selectedThemeInput.checked = true;
+		translatePointer = selectedThemeInput.dataset.movePointerTo;
+		transformPointer();
 	}
 
 	function setHeightText() {
 		const height = measureDiv.offsetHeight;
 		sizeText.innerHTML = (height * 0.0264583).toFixed(2) + ' cm';
+	}
+
+	function setThemesListHeight() {
+		const themesListHeight = document.querySelector('data');
+		themesList.style.height = themesListHeight.dataset.themesListHeight;
+	}
+
+	function transformPointer() {
+		pointer.style.transform = `translateY(${translatePointer}) rotate(${window.innerWidth < 800 ? -180 : 0}deg)`;
 	}
 });
