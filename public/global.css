@@ -1,13 +1,13 @@
-:root{
+:root {
 	--burger-color: white;
 }
 
-body{
+body {
 	background-color: #222222;
 	visibility: hidden;
 }
 
-.trigger{
+.trigger {
 	position: fixed;
 	height: 20px;
 	width: 30px;
@@ -16,7 +16,7 @@ body{
 	cursor: pointer;
 }
 
-.trigger p{
+.trigger p {
 	display: block;
 	position: fixed;
 	top: 20px;
@@ -31,7 +31,7 @@ body{
 	border-radius: 3px;
 }
 
-.trigger p::before{
+.trigger p::before {
 	content: '';
 	background: var(--burger-color);
 	display: block;
@@ -41,7 +41,7 @@ body{
 	border-radius: 3px;
 	transition: 0.2s;
 }
-.trigger p::after{
+.trigger p::after {
 	content: '';
 	background: var(--burger-color);
 	display: block;
@@ -52,20 +52,19 @@ body{
 	transition: 0.2s;
 }
 
-.triggerActive p{
+.triggerActive p {
 	background: none;
 }
-.triggerActive p::before{
+.triggerActive p::before {
 	transform-origin: center;
 	transform: rotate(45deg);
 	transition: 0.2s;
 }
-.triggerActive p::after{
+.triggerActive p::after {
 	transform-origin: center;
-	transform: translateY(-4px) rotate(-45deg) ;
+	transform: translateY(-4px) rotate(-45deg);
 	transition: 0.2s;
 }
-
 
 .themesList {
 	position: fixed;
@@ -86,8 +85,7 @@ body{
 	transition: 0.2s;
 }
 
-
-.theme-input{
+.theme-input {
 	position: relative;
 	display: block;
 	width: 30px;
@@ -96,7 +94,7 @@ body{
 	margin-bottom: 10px;
 }
 
-.inside-input{
+.inside-input {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -107,35 +105,31 @@ body{
 	box-sizing: border-box;
 }
 
-.blueprint{
+.blueprint {
 	background-image: linear-gradient(#03378b, #2b4ce0, #2e7ac2);
 	cursor: pointer;
 	border: 2px #f4ae3c solid;
 	box-sizing: border-box;
 }
 
-/* .blueprint .inside-input{
-	border: 2px #f4ae3c solid;
-} */
-
-
-
-.neon{
-	background: linear-gradient( rgba(14,14,14,1) 0%, rgb(44, 44, 44) 100%);
+.neon {
+	background: linear-gradient(rgba(14, 14, 14, 1) 0%, rgb(44, 44, 44) 100%);
 	cursor: pointer;
 	border: 2px #d18c1d solid;
 	box-shadow: 0 0 4px #d18c1d;
 	box-sizing: border-box;
 }
 
-/* .neon .inside-input{
-	border: 2px #d18c1d solid;
-	box-shadow: 0 0 4px #d18c1d;
-} */
+#blueprint-input:checked ~ #pointer {
+	transform: translateY(0px);
+	transition: 0.2s ease-out;
+}
+#neon-input:checked ~ #pointer {
+	transform: translateY(40px);
+	transition: 0.2s ease-out;
+}
 
-
-
-#pointer{
+#pointer {
 	position: absolute;
 	right: -30px;
 	left: auto;
@@ -156,19 +150,17 @@ body{
 	transition: 0.5s ease-out;
 } */
 
-#pointer-inner::before
-{
+#pointer-inner::before {
 	content: '';
 	background: var(--burger-color);
 	display: inline-block;
 	width: 15px;
 	height: 4px;
 	border-radius: 3px;
-	transform: translateX(-6px) translateY(-5px) rotate(90deg) ;
+	transform: translateX(-6px) translateY(-5px) rotate(90deg);
 }
 
-#pointer-inner
-{
+#pointer-inner {
 	display: inline-block;
 	width: 15px;
 	height: 4px;
@@ -177,24 +169,12 @@ body{
 	transform: translateY(8px) rotate(-45deg);
 }
 
-#blueprint-input:checked~#pointer{
-	transform: translateY(0px);
-	transition: 0.2s ease-out;
-}
-#neon-input:checked~#pointer{
-	transform: translateY(40px);
-	transition: 0.2s ease-out;
-}
-
-
-
-@media (max-width: 800px)
-{
-	.trigger{
+@media (max-width: 800px) {
+	.trigger {
 		left: auto;
 		right: 10px;
 	}
-	.trigger p{
+	.trigger p {
 		left: auto;
 		right: 10px;
 	}
@@ -211,19 +191,16 @@ body{
 		transition: 0.2s;
 	}
 
-	#pointer{
+	#pointer {
 		right: auto;
 		left: -30px;
 		transform: translateY(0px) rotate(180deg);
 	}
 
-	#blueprint-input:checked~#pointer{
+	#blueprint-input:checked ~ #pointer {
 		transform: translateY(0px) rotate(180deg);
 	}
-	#neon-input:checked~#pointer{
+	#neon-input:checked ~ #pointer {
 		transform: translateY(40px) rotate(180deg);
 	}
-	
-
 }
-
