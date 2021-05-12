@@ -9,7 +9,7 @@ const { nanoid } = require('nanoid');
 const rateLimit = require('express-rate-limit');
 const cookieParser = require('cookie-parser');
 const { db } = require('./config');
-const themesJSON = require('./public/themes.json');
+const themesJSON = require('./public/resources/themes.json');
 
 const app = express();
 app.use(express.json());

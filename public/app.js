@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	document.querySelectorAll('input[name=themes]').forEach((c) => {
 		c.addEventListener('change', async (e) => {
-			const themesJSON = await getData('./themes.json');
+			const themesJSON = await getData('./resources/themes.json');
 			const selected = e.target.value;
 			setCookie('theme', selected);
-			theme.href = themesJSON[selected];
+			theme.href = `./styles/${themesJSON[selected]}`;
 			translatePointer = e.target.dataset.movePointerTo;
 			transformPointer();
 		});
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	async function checkCookie() {
 		const themeCookie = getCookie('theme');
-		const themesJSON = await getData('./themes.json');
+		const themesJSON = await getData('./resources/themes.json');
 		const selectedThemeInput = document.querySelector(`input[value=${themeCookie ? themeCookie : Object.keys(themesJSON)[0]}]`);
 		selectedThemeInput.checked = true;
 		translatePointer = selectedThemeInput.dataset.movePointerTo;

@@ -154,14 +154,22 @@ input[type='submit']:hover {
 	text-shadow: 0 0 10px #d42020;
 }
 
-#author {
+.authorsBox {
 	position: absolute;
 	bottom: 0;
 	right: 0;
+	text-align: right;
+}
+
+.authorsBox p {
 	margin: 4px;
 	color: #d18c1d;
 	text-shadow: 0 0 10px #d18c1d;
 	font-size: 15px;
+}
+
+.authorsBox a {
+	text-decoration: none;
 }
 
 #right-measure {

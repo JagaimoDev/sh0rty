@@ -152,13 +152,21 @@ input[type='submit'] {
 	display: inline-block;
 }
 
-#author {
+.authorsBox {
 	position: absolute;
 	bottom: 0;
 	right: 0;
+	text-align: right;
+}
+
+.authorsBox p {
 	margin: 4px;
 	color: var(--main-color);
 	font-size: 15px;
+}
+
+.authorsBox a {
+	text-decoration: none;
 }
 
 #right-measure {
