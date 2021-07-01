@@ -67,7 +67,7 @@ app.post('/url', async (req, res, next) => {
 				alias = nanoid(5).toLowerCase();
 			} while (!(await db.collection('urls').where('alias', '==', alias).get()).empty);
 
-			const date = new Date().toLocaleString('ET');
+			const date = new Date().toLocaleString('sv-SE');
 			await db
 				.collection('urls')
 				.doc(alias)
