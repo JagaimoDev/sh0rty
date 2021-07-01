@@ -10,6 +10,7 @@ const rateLimit = require('express-rate-limit');
 const cookieParser = require('cookie-parser');
 const { db } = require('./config');
 const themesJSON = require('./public/resources/themes.json');
+const { firestore } = require('firebase-admin');
 
 const app = express();
 app.use(express.json());
@@ -67,13 +68,13 @@ app.post('/url', async (req, res, next) => {
 				alias = nanoid(5).toLowerCase();
 			} while (!(await db.collection('urls').where('alias', '==', alias).get()).empty);
 
-			const date = new Date().toLocaleString('sv-SE');
+			const date = new Date();
 			await db
 				.collection('urls')
 				.doc(alias)
 				.set({
 					alias: alias,
-					creationDate: date,
+					creationDate: firestore.Timestamp.fromDate(date),
 					url: url,
 				})
 				.catch((e) => {
