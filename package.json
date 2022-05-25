@@ -7,7 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "author": "PotatoDev33",
+  "author": "szycic",
   "license": "MIT",
   "dependencies": {
     "cookie-parser": "^1.4.5",
